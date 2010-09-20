@@ -14,6 +14,7 @@
 class Surfaces {
 public:
    Surfaces();
+   static void setTransparent(SDL_Surface* surf,int r,int g,int b);
    static SDL_Surface* surfLoad(char* file);
    static bool draw(SDL_Surface* src, SDL_Surface *dst);
    static bool draw(SDL_Surface* src,int srcX, int srcY,int srcH, int srcW,

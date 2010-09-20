@@ -5,41 +5,31 @@
  * Created on 18 de julio de 2010, 00:58
  */
 
-#ifndef CENTITY_H
-#define	CENTITY_H
+#ifndef ENTITY_H
+#define	ENTITY_H
 
 #include <SDL/SDL.h>
+#include "Surfaces.h"
+#include "defines.h"
 
-enum Type {
-    NOT_ANIMABLE = 0,
-    ANIMABLE
-};
 
-enum Direction {
-    UP = 0,
-    DOWN,
-    LEFT,
-    RIGHT,
-    TOPRIGHT,
-    TOPLEFT,
-    DOWNRIGHT,
-    DOWNLEFT
-};
+class Entity {
 
-class CEntity {
+protected:
     int x;
     int y;
-    Type animable;
     SDL_Surface *graphic;
-    int tile;
 
 public:
-     CEntity(Type a);
-     void move(Direction dir);
-     void move(int x, int y);
-     void onRender();
+     Entity();
+     Entity(int X, int Y) : x(X),y(Y) {};
+     void move(int xx, int yy);
+     void moveX(int X) { x = X;};
+     void moveY(int Y) { y = Y;};
+     void draw(SDL_Surface *dst,int tile);
+     void setGraphic(SDL_Surface *g);
 };
 
 
-#endif	/* CENTITY_H */
+#endif	/* ENTITY_H */
 

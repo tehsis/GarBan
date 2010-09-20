@@ -70,3 +70,14 @@ bool Surfaces::draw(SDL_Surface* src,int srcX, int srcY,int srcH, int srcW,
 
 
 }
+
+void Surfaces::setTransparent(SDL_Surface* surf, int r, int g,int b) {
+
+	if(surf == NULL) {
+		return;
+	}
+
+
+	SDL_SetColorKey(surf, SDL_SRCCOLORKEY ,SDL_MapRGB(surf->format,r,g,b));
+
+}

@@ -1,7 +1,6 @@
 #include "App.h"
 
-void CApp::exit() {
-    Running = false;
+void App::exit() {
     SDL_FreeSurface(screen);
     stage.free();
     SDL_Quit();

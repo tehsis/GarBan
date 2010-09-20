@@ -1,5 +1,5 @@
 #include "App.h"
 
-void CApp::loop() {
-    
+void App::loop() {
+	anim.animate();
 }

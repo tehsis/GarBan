@@ -1,12 +1,12 @@
 #include "App.h"
 
-CApp::CApp()
+App::App()
 {
     screen = NULL;
     Running = true;
 }
 
-int CApp::exec() {
+int App::exec() {
     if(init() == false) {
             return -1;
         }
@@ -15,13 +15,15 @@ int CApp::exec() {
 
     while(Running) {
         while(SDL_PollEvent(&e)) {
-            event(&e);
+            EventHandler::catchEvent(&e);
         }
         loop();
 
         draw();
 
     }
+
+    exit();
 
 
 

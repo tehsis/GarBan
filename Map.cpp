@@ -58,13 +58,13 @@ bool Map::draw(SDL_Surface* dst) {
    std::vector<Tile>::iterator tile_It;
 
    int tilesInARow = tileSet->w / TILE_SIZE; //Number of tiles in a row of the tileset
+   int tileX,tileY; // Coordinates of the tile in the tileset
 
    tile_It = tileList.begin();
 
    for(int i=0; i<TILES_COLUMN;i++) {
        for(int j=0 ; j<TILES_ROW; j++,tile_It++) {
     
-	     int tileX,tileY; // Coordinates of the tile in the tileset
 	     int tileT = tile_It->id;
 
 	     //Calculates the position of the tile in the tileset

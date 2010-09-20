@@ -1,8 +1,6 @@
 #include "App.h"
-#include <iostream>
-using namespace std;
 
-bool CApp::init() {
+bool App::init() {
     if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
         return false;
     }
@@ -12,12 +10,20 @@ bool CApp::init() {
       return false;
     }
 
+    SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY,SDL_DEFAULT_REPEAT_INTERVAL);
 
-     if(!(stage.load("maps/stage.map"))) {
-	 return false; 
-     }
+    test = Surfaces::surfLoad(static_cast<char *>("images/pjsprite.png"));
 
-     if(!(stage.loadTileSet("images/tiles.png"))) {
+    PC.setGraphic(test);
+
+    Surfaces::setTransparent(test,0xff,0x00,0x00);
+
+    if( !(stage.load(static_cast<char *>("maps/stage.map"))) ){
+    	return false;
+    }
+
+
+     if(!(stage.loadTileSet(static_cast<char *>("images/tiles.png")))) {
 	 return false;
      }
 

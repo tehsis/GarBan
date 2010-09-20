@@ -14,7 +14,7 @@ using namespace std;
  */
 int main(int argc, char** argv) {
 
-    CApp soko;
+    App soko;
 
     return soko.exec();
 }

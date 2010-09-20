@@ -5,32 +5,40 @@
  * 
  */
 
-#ifndef CAPP_H
-#define	CAPP_H
+#ifndef APP_H
+#define	APP_H
 
 #include <SDL/SDL.h>
 #include "Tile.h"
 #include "Surfaces.h"
 #include "defines.h"
+#include "Animable.h"
 #include "Map.h"
+#include "EventHandler.h"
+#include "PlayableCharacter.h"
 
-class CApp {
+class App : public EventHandler {
 
     bool Running;
     SDL_Surface* screen;
     SDL_Surface* test;
     Map stage;
+    Animable anim;
+    PlayableCharacter PC;
+
 
 public:
-    CApp();
+    App();
     int exec();
     void exit();
     void loop();
     void draw();
-    void event(SDL_Event* event);
     bool init();
+    void eventQuit(){ Running = false;};
+    void eventKeyDown(SDLKey sym);
+
 };
 
 
-#endif	/* CAPP_H */
+#endif	/* APP_H */
 
