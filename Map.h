@@ -16,9 +16,7 @@
 
 class Map {
     SDL_Surface *tileSet;
-
     std::vector<Tile> tileList;
-
 
 public:
     Map();

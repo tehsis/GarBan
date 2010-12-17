@@ -10,21 +10,17 @@
 
 #include <SDL/SDL_image.h>
 
-
 enum TILE_TYPE{
     TYPE_GROUND = 0, // The characters can walk on it.
     TYPE_BLOCK // Characters can't walk on it.
-
 };
-
 class Tile {
-
-public:
+  public:
     int id;
     int type;
 
 
-public:
+  public:
     Tile();
 };
 #endif	/* CTILE_H */
